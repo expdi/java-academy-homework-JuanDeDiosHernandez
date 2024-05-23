@@ -1,0 +1,7 @@
+<h1>Adopter Web</h1>
+<button (click)="getAdopters()">Get Adopters</button>
+<div>
+  <li *ngFor="let adopter of dsAdopters">
+    <span>{{adopter.name}}</span>
+  </li>
+</div>

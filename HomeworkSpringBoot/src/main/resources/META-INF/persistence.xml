@@ -1,0 +1,44 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" >
+
+    <persistence-unit name="LarkUPU_SE" transaction-type="RESOURCE_LOCAL">
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>expeditors.backend.adoption.classes.Adopter</class>
+        <class>expeditors.backend.adoption.classes.Animal</class>
+
+        <properties>
+            <!-- Props for datasource are in JPADemo -->
+
+<!--            <property name="hibernate.hbm2ddl.auto" value="create"/>-->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+            <!-- This sets up how hibernate will map entities to tables.  Look in application.properties
+            for more info and an alternatives.  This is necessary because otherwise for an SE application
+            Hibernate assumes a PhysicalNamingStrategy which doesn't sync up with the tables/columns that this
+            strategy produces.
+            -->
+<!--            &lt;!&ndash;            <property name="hibernate.physical_naming_strategy" value="org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy"/>&ndash;&gt;-->
+<!--            <property name="hibernate.naming.physical-strategy"-->
+<!--                      value="org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl"/>-->
+
+
+            <!--
+            <property name="jakarta.persistence.schema-generation.database.action"
+                value="drop-and-create" />
+            <property name="jakarta.persistence.schema-generation.create-source"
+                value="script" />
+            <property name="jakarta.persistence.schema-generation.create-script-source"
+                value="META-INF/createDB.sql" />
+            <property name="jakarta.persistence.schema-generation.drop-source"
+                value="metadata" />
+            <property name="jakarta.persistence.sql-load-script-source"
+                value="META-INF/populateDB.sql" />
+            -->
+
+        </properties>
+
+    </persistence-unit>
+</persistence>

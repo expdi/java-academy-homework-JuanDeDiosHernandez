@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  adopter-api:
+    build: ./HomeworkSpringBoot
+    container_name: "adopter-api"
+    ports:
+      - "4000:8080"
+
+  adopter-web:
+    build: ./adopter-web
+    container_name: "adopter-web"
+    ports:
+      - "3000:80"
+    depends_on:
+      - adopter-api
